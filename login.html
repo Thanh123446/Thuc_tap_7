@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập / Đăng Ký - GIS Nông Nghiệp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background: #eef2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .auth-card { background: white; width: 100%; max-width: 400px; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .auth-header { text-align: center; margin-bottom: 25px; }
+        .auth-header i { font-size: 40px; color: #1b5e20; margin-bottom: 10px; }
+        .auth-header h2 { color: #1b5e20; font-size: 22px; }
+        .tabs { display: flex; border-bottom: 2px solid #e0e0e0; margin-bottom: 20px; }
+        .tab-btn { flex: 1; padding: 10px; text-align: center; background: none; border: none; font-weight: bold; color: #666; cursor: pointer; }
+        .tab-btn.active { color: #1b5e20; border-bottom: 3px solid #1b5e20; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-size: 13px; font-weight: 600; color: #444; }
+        .form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none; }
+        .btn-submit { width: 100%; padding: 12px; background: #1b5e20; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .btn-submit:hover { background: #2e7d32; }
+        .alert { padding: 10px; border-radius: 6px; font-size: 13px; margin-bottom: 15px; display: none; }
+        .alert-danger { background: #ffebee; color: #c62828; }
+        .alert-success { background: #e8f5e9; color: #2e7d32; }
+    </style>
+</head>
+<body>
+
+<div class="auth-card">
+    <div class="auth-header">
+        <i class="fa-solid fa-seedling"></i>
+        <h2>Hệ Thống GIS Nông Nghiệp</h2>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" id="loginTab" onclick="switchTab('login')">Đăng Nhập</button>
+        <button class="tab-btn" id="registerTab" onclick="switchTab('register')">Đăng Ký</button>
+    </div>
+
+    <div id="alertBox" class="alert"></div>
+
+    <!-- Form Đăng Nhập -->
+    <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group">
+            <label>Tên tài khoản</label>
+            <input type="text" id="loginUsername" required placeholder="Nhập tên tài khoản">
+        </div>
+        <div class="form-group">
+            <label>Mật khẩu</label>
+            <input type="password" id="loginPassword" required placeholder="Nhập mật khẩu">
+        </div>
+        <button type="submit" class="btn-submit">ĐĂNG NHẬP</button>
+    </form>
+
+    <!-- Form Đăng Ký -->
+    <form id="registerForm" onsubmit="handleRegister(event)" style="display: none;">
+        <div class="form-group">
+            <label>Họ và tên</label>
+            <input type="text" id="regFullName" required placeholder="Nhập họ và tên">
+        </div>
+        <div class="form-group">
+            <label>Tên tài khoản</label>
+            <input type="text" id="regUsername" required placeholder="Tạo tên tài khoản">
+        </div>
+        <div class="form-group">
+            <label>Mật khẩu</label>
+            <input type="password" id="regPassword" required placeholder="Tạo mật khẩu">
+        </div>
+        <button type="submit" class="btn-submit">ĐĂNG KÝ TÀI KHOẢN</button>
+    </form>
+</div>
+
+<script>
+    function switchTab(tab) {
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const alertBox = document.getElementById('alertBox');
+        alertBox.style.display = 'none';
+
+        if (tab === 'login') {
+            loginForm.style.display = 'block';
+            registerForm.style.display = 'none';
+            document.getElementById('loginTab').classList.add('active');
+            document.getElementById('registerTab').classList.remove('active');
+        } else {
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+            document.getElementById('registerTab').classList.add('active');
+            document.getElementById('loginTab').classList.remove('active');
+        }
+    }
+
+    function showAlert(msg, isSuccess = false) {
+        const box = document.getElementById('alertBox');
+        box.className = `alert ${isSuccess ? 'alert-success' : 'alert-danger'}`;
+        box.innerText = msg;
+        box.style.display = 'block';
+    }
+
+    async function handleLogin(e) {
+        e.preventDefault();
+        const username = document.getElementById('loginUsername').value;
+        const password = document.getElementById('loginPassword').value;
+
+        try {
+            const res = await fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+            const data = await res.json();
+
+            if (res.ok) {
+                localStorage.setItem('user', JSON.stringify(data.user));
+                if (data.access_token) {
+                    localStorage.setItem('auth_token', data.access_token);
+                }
+                if (data.user.role === 'admin') {
+                    window.location.href = '/admin';
+                } else {
+                    window.location.href = '/';
+                }
+            } else {
+                showAlert(data.detail || 'Đăng nhập thất bại');
+            }
+        } catch (err) {
+            showAlert('Lỗi kết nối máy chủ!');
+        }
+    }
+
+    async function handleRegister(e) {
+        e.preventDefault();
+        const full_name = document.getElementById('regFullName').value;
+        const username = document.getElementById('regUsername').value;
+        const password = document.getElementById('regPassword').value;
+
+        try {
+            const res = await fetch('/api/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ full_name, username, password })
+            });
+            const data = await res.json();
+
+            if (res.ok) {
+                showAlert('Đăng ký thành công! Hãy chuyển sang Đăng nhập.', true);
+                setTimeout(() => switchTab('login'), 1500);
+            } else {
+                showAlert(data.detail || 'Đăng ký thất bại');
+            }
+        } catch (err) {
+            showAlert('Lỗi kết nối máy chủ!');
+        }
+    }
+</script>
+</body>
+</html>

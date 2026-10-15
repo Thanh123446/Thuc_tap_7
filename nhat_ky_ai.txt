@@ -1,0 +1,54 @@
+2026-09-30 15:19:48,597 | CÂU HỎI: Người dùng hỏi: 'nhà kho ở đâu chỉ tôi với'
+2026-09-30 15:25:03,240 | CÂU HỎI: Người dùng hỏi: 'nhà kho ở đâu'
+2026-10-01 14:57:04,065 | CÂU HỎI: Người dùng hỏi: 'Thời tiết ở Thanh Hóa thế nào?' | Kèm ảnh: Không
+2026-10-01 14:57:05,210 | CÂU HỎI: Lỗi khi gọi AI: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-10-01 15:52:43,134 | CÂU HỎI: Người dùng hỏi: 'Thời tiết ở Thanh Hóa thế nào?' | Kèm ảnh: Không
+2026-10-01 15:52:43,733 | CÂU HỎI: Lỗi khi gọi AI: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-10-01 16:04:02,340 | CÂU HỎI: Người dùng hỏi: 'Thời tiết ở Thanh Hóa thế nào?' | Kèm ảnh: Không
+2026-10-01 16:04:02,836 | CÂU HỎI: Lỗi khi gọi AI: 404 This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+2026-10-01 16:09:34,243 | CÂU HỎI: Người dùng hỏi: 'Thời tiết ở Thanh Hóa thế nào?' | Kèm ảnh: Không
+2026-10-01 16:34:16,732 | CÂU HỎI: Người dùng hỏi: 'dây là cây gì' | Kèm ảnh: Có
+
+2026-10-01 23:47:25,420 | L\u1ed7i khi g\u1ecdi AI: Timeout of 600.0s exceeded, last exception: 503 Illegal metadata
+2026-10-01 23:47:25,422 | C�U H\u1eceI: Ng\u01b0\u1eddi d�ng h\u1ecfi: 'th\u1eddi ti\u1ebfc h�m nay' | K�m \u1ea3nh: Kh�ng
+2026-10-01 23:57:19,555 | L\u1ed7i khi g\u1ecdi AI: Timeout of 600.0s exceeded, last exception: 503 Illegal metadata
+2026-10-02 00:01:28,445 | CÂU HỎI: Người dùng hỏi: 'thờ tiết Hà Nội hôm nay' | Kèm ảnh: Không
+2026-10-02 00:01:43,449 | Lỗi: Yêu cầu xử lý quá 15 giây (Timeout).
+2026-10-02 00:19:36,530 | CÂU HỎI: Người dùng hỏi: 'thời tiết Hà Nội hôm nay' | Kèm ảnh: Không
+2026-10-02 00:20:06,535 | Lỗi: Yêu cầu xử lý quá 30 giây (Timeout).
+2026-10-02 00:42:57,588 | CÂU HỎI: Người dùng hỏi: 'đây alf cây gì' | Kèm ảnh: Có
+2026-10-02 00:42:58,058 | Lỗi khi gọi AI: 404 This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+2026-10-02 00:43:17,387 | CÂU HỎI: Người dùng hỏi: 'đó là cây gì' | Kèm ảnh: Không
+2026-10-02 00:43:17,660 | Lỗi khi gọi AI: 404 This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+2026-10-02 00:45:49,115 | CÂU HỎI: Người dùng hỏi: 'giá lúa ở Hà Nội' | Kèm ảnh: Không
+2026-10-02 00:45:50,926 | TRẢ LỜI: Giá lúa tại Hà Nội hiện đang ở mức 18.500 VNĐ/kg với xu hướng ổn định. (Nguồn: Cổng thông tin Thị trường Nông sản)
+2026-10-02 01:08:21,678 | CÂU HỎI: 'Tìm cho tôi danh sách các thửa đất đang trồng lúa.' | Ảnh kèm: Không
+2026-10-02 01:08:51,675 | Lỗi: Quá thời gian phản hồi (Timeout).
+2026-10-02 01:09:50,626 | CÂU HỎI: 'đây là cây gì' | Ảnh kèm: Có
+2026-10-02 01:10:20,651 | Lỗi: Quá thời gian phản hồi (Timeout).
+2026-10-02 10:25:12,697 | -> Đã xây dựng Spatial Index (STRtree) cho 5 thửa đất thành công.
+2026-10-02 10:27:29,621 | CÂU HỎI: 'đây là cây gì' | Có ảnh: Có
+2026-10-02 10:27:49,633 | Lỗi Timeout phản hồi AI.
+2026-10-02 10:29:54,844 | CÂU HỎI: 'Tìm thửa đất trồng lúa lớn nhất và tính tổng diện tích đất lúa giúp tô' | Có ảnh: Không
+2026-10-02 10:30:14,845 | Lỗi Timeout phản hồi AI.
+2026-10-02 10:32:35,475 | -> Đã xây dựng Spatial Index (STRtree) cho 5 thửa đất thành công.
+2026-10-02 10:45:11,202 | -> Nạp 5 thửa đất vào RAM mất: 0.037s
+2026-10-02 10:46:01,519 | -> Nhận câu hỏi: 'cho tôi biết các chức năng cơ bản của bạn'
+2026-10-02 10:46:04,012 | <- Hoàn tất phản hồi trong 2.49s
+2026-10-02 10:47:33,506 | -> Nhận câu hỏi: 'Tìm thửa đất trồng lúa lớn nhất và tính tổng diện tích đất lúa giúp tôi.'
+2026-10-02 10:47:34,425 | -> Lỗi xử lý: sequence item 5: expected str instance, float found
+2026-10-02 10:54:32,495 | -> Nạp 5 thửa đất vào RAM mất: 0.037s
+2026-10-02 10:55:18,106 | -> Nhận câu hỏi: 'Tìm thửa đất trồng lúa lớn nhất và tính tổng diện tích đất lúa giúp tôi.'
+2026-10-02 10:55:19,224 | -> Lỗi xử lý: sequence item 5: expected str instance, float found
+2026-10-02 11:00:00,292 | INFO | -> Đã nạp 5 thửa đất vào RAM (STRtree Index) mất: 0.041s
+2026-10-02 14:27:00,413 | INFO | -> Đã nạp 5 thửa đất vào RAM (STRtree Index) mất: 0.124s
+2026-10-02 14:28:04,992 | INFO | -> CÂU HỎI NHẬN ĐƯỢC: 'tính khoảng cách từ giếng đến thửa 1'
+2026-10-02 14:28:39,995 | ERROR | -> LỖI TIMEOUT: Kết nối tới Google API quá 35s.
+2026-10-02 14:33:56,328 | INFO | -> Đã nạp 5 thửa đất vào RAM (STRtree Index) mất: 0.038s
+2026-10-02 14:38:03,156 | INFO | -> Đã nạp 5 thửa đất vào RAM (STRtree Index) mất: 0.037s
+2026-10-02 14:38:03,196 | INFO | -> CÂU HỎI NHẬN ĐƯỢC: 'tính khoảng cách từ giếng đến thửa 1'
+2026-10-02 14:38:04,891 | INFO | <- HOÀN TẤT PHẢN HỒI (1.7s)
+2026-10-02 15:00:53,740 | INFO | -> Đã nạp 5 thửa đất vào RAM (STRtree Index) mất: 0.059s
+2026-10-02 15:22:54,245 | INFO | -> Đã nạp 5 thửa đất vào RAM (STRtree Index) mất: 0.036s
+2026-10-02 15:43:38,621 | INFO | -> Đã nạp 5 thửa đất vào RAM (STRtree Index) mất: 0.037s
+2026-10-02 15:49:25,283 | INFO | -> Đã nạp 5 thửa đất vào RAM (STRtree Index) mất: 0.039s
